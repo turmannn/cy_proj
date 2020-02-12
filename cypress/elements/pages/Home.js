@@ -7,7 +7,7 @@ class HomePage {
     this.header = new Header();
 
     this.title = 'Find Jobs in Tech | Dice.com | Find Jobs in Tech';
-    
+
     this.textPlaceholderJobTtl = 'Job title, skills or company';
     this.textPlaceholderLocation = 'Zip code, city or state';
 
@@ -20,7 +20,7 @@ class HomePage {
     cy.visit('/');
   }
 
-  getTitle() {
+  getJobTitle() {
     return cy.get(this.locFieldJobTitle);
   }
 
@@ -33,7 +33,7 @@ class HomePage {
   }
 
   goToSignIn() {
-    const link = this.header.clickSignIn();
+    this.header.clickSignIn();
 
     const signIn = new SignInPage();
     return signIn;

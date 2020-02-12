@@ -1,9 +1,6 @@
-class SignInPage {
-  // const locFieldEmail = "#login-email-input";
-  // const locFieldPassword = "#login-password-input";
-  // const locHintInvCreds = "#label-login-password-input-error";
-  // const locBtnSubmit = "#login-submit-button";
+import ProfilePage from './Profile';
 
+class SignInPage {
   constructor() {
     this.title = 'Sign In';
 
@@ -54,7 +51,7 @@ class SignInPage {
   submit() {
     const button = cy.get(this.locBtnSubmit);
     button.click();
-
+    return new ProfilePage();
   }
 }
 
