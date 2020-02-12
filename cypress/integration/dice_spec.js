@@ -7,7 +7,7 @@ describe('HomePage tests', function() {
     const homePg = new HomePage;
     homePg.visit()
 
-    cy.title().should('eq', 'Find Jobs in Tech | Dice.com | Find Jobs in Tech')
+    cy.title().should('eq', homePg.title)
   })
 
   it('checks Job Title field is present', function() {
@@ -17,7 +17,7 @@ describe('HomePage tests', function() {
     homePg.getTitle()
       .should('exist')
       .invoke('attr', 'placeholder')
-      .should('contain', 'Job title, skills or company')
+      .should('contain', homePg.textPlaceholderJobTtl)
   })
 
   it('checks Location field is present', function() {
@@ -27,7 +27,7 @@ describe('HomePage tests', function() {
     homePg.getLocatoin()
         .should('exist')
         .invoke('attr', 'placeholder')
-        .should('contain', 'Zip code, city or state')
+        .should('contain', homePg.textPlaceholderLocation)
   })
 
 
@@ -45,7 +45,7 @@ describe('HomePage tests', function() {
     homePg.visit()
 
     const signInPg = homePg.goToSignIn();
-    cy.title().should('eq', 'Sign In')
+    cy.title().should('eq', signInPg.title)
   })
 
 
@@ -79,7 +79,7 @@ describe('Login Page tests', function() {
 
     signInPg.getEmailPasswordError()
       .should('exist')
-      .contains('Email and/or password incorrect.')
+      .contains(signInPg.textHintEmailPsd)
 
 })
 
@@ -92,11 +92,10 @@ describe('Login Page tests', function() {
 
     signInPg.getEmailError()
       .should('exist')
-      .contains('Enter a valid email')
+      .contains(signInPg.textHintEmail)
 
     signInPg.getPasswError()
       .should('exist')
-      .contains('8 character minimum with at least 1 number and 1 letter')
-
+      .contains(signInPg.textHintPsd)
   })
 })

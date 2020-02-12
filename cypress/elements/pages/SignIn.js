@@ -5,6 +5,12 @@ class SignInPage {
   // const locBtnSubmit = "#login-submit-button";
 
   constructor() {
+    this.title = 'Sign In';
+
+    this.textHintEmail = 'Enter a valid email';
+    this.textHintPsd = '8 character minimum with at least 1 number and 1 letter';
+    this.textHintEmailPsd = 'Email and/or password incorrect'
+
     this.locFieldEmail = "#email";
     this.locFieldPassword = "#password";
     this.locHintInvCreds = '[data-automation-id="login-failure-help-message"]';

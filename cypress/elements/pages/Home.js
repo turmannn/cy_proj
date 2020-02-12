@@ -5,9 +5,15 @@ import SearchResultsPage from './SearchResults';
 class HomePage {
   constructor() {
     this.header = new Header();
-    this.locFieldJobTitle = 'dhi-new-typeahead-input input'
-    this.locFieldLocation = 'dhi-google-location-search input'
-    this.locBtnSearch = '#submitSearch-button'
+
+    this.title = 'Find Jobs in Tech | Dice.com | Find Jobs in Tech';
+    
+    this.textPlaceholderJobTtl = 'Job title, skills or company';
+    this.textPlaceholderLocation = 'Zip code, city or state';
+
+    this.locFieldJobTitle = 'dhi-new-typeahead-input input';
+    this.locFieldLocation = 'dhi-google-location-search input';
+    this.locBtnSearch = '#submitSearch-button';
   }
 
   visit() {
