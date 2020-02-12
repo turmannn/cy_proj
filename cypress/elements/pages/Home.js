@@ -40,7 +40,7 @@ class HomePage {
   }
 
   searchJob(jobTitle, JobLocation) {
-    this.getTitle().type(jobTitle);
+    this.getJobTitle().type(jobTitle);
     this.getLocatoin().type(JobLocation);
     this.getSearchBtn().click();
 
